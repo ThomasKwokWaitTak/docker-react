@@ -1,0 +1,7 @@
+Wire up github and local development machine
+Put it into travis and auto to aws for deployment
+
+
+
+#docker run -p 3000:3000 -v/app/node_modules -v$(pwd):/app  
+# 364212d1f8ff
