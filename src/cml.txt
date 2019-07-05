@@ -1,0 +1,5 @@
+docker run -p 3000:3000 -v/node_modules -v$(pwd):/app  364212d1f8ff #map ports and files from local to containers
+
+docker attach bc72325a43dc #Connect to the stdin, stdout, errout.
+
+docker exec -it bc72325a43dc sh #open the container's shell.
