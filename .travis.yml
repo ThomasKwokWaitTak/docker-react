@@ -4,6 +4,7 @@ services:
 
 before_install:
   - docker build -t thomas/docker-react -f Dockerfile.dev .
-
+  #Specify a series of actions before script.
 script:
-  - docker run thomas/docker-react npm run test -- --coverage
+  - docker run thomas/docker-react npm run test -- --coverage 
+  # -- --coveage is for stop hanging of the "npm run test" 
