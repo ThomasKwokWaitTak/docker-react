@@ -7,4 +7,17 @@ before_install:
   #Specify a series of actions before script.
 script:
   - docker run thomas/docker-react npm run test -- --coverage 
-  # -- --coveage is for stop hanging of the "npm run test" 
+  # -- --coveage is for stop hanging of the "npm run test"
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "eelasticbeanstalk-us-east-2-274002435587"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
